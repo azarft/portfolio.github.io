@@ -1,0 +1,506 @@
+/* Reset some default styles */
+body, ul, li, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #b7b7b7;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav {
+    background-color: rgb(223, 223, 223);
+    display: flex;
+    justify-content: center;
+    color: white;
+    padding: 20px;
+    margin-bottom: 0px;
+    width: 100%;
+    position: relative; /* Make the parent container a positioning context */
+
+    /* Create a pseudo-element for the gradient border */
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px; /* Adjust the height of the gradient border */
+        background: linear-gradient(90deg, #29BBC4 0%, #23195D 100%);
+    }
+}
+
+nav img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+nav li {
+    margin: 10px 20px;
+    transition: transform 0.5s;
+}
+
+nav li:hover{
+    transform: scale(1.1);
+}
+
+nav a:hover {
+    background: linear-gradient(90deg, #29BBC4 0%, #23195D 100%);
+    background-clip: text;
+    -webkit-background-clip: text; /* For older webkit-based browsers */
+    color: transparent; /* Make the text transparent to reveal the gradient background */
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(80, 80, 80);
+}
+section {
+    width: 100%;
+    padding: 20px;
+    background-color: rgb(223, 223, 223);
+    margin: 10px 0;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+
+
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Home (Welcome Page) styles */
+#home {
+    margin: 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px; /* Adjust the padding for consistent section height */
+}
+
+#home img {
+    width: 50%; /* Adjust the width as needed */
+    height: auto;
+    max-width: 606px; /* Set a maximum width */
+    transition: transform 0.5s;
+}
+
+#home img:hover {
+    transform: scale(1.1);
+    filter: grayscale(100%);
+}
+
+
+.home-content {
+    margin: auto;
+    gap: 40px;
+    display: flex;
+
+}
+
+#home .text {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+
+#home .text h1 {
+    text-align: left;
+    font-size: 2.0em;
+    margin: 0;
+}
+
+#home .text p {
+    font-size: 20px;
+    margin: 20px;
+}
+
+#home .call{
+    margin-top: 15px;
+    width: 100px;
+    text-align: center;
+    background: linear-gradient(90deg, #29BBC4 0%, #23195D 100%); /* Green background color */
+    color: white;       /* White text color */
+    padding: 10px 20px; /* Padding for the button */
+    border: none;      /* Remove the button border */
+    cursor: pointer;   /* Change cursor to pointer on hover */
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+#home .call:hover {
+    transform: scale(1.05);
+    background: #ffffff; /* Darker green on hover */
+    color: black;
+    border: 1px solid black;
+    box-shadow: 0 0 10px rgba(51, 51, 51, 0.8);
+
+}
+
+#home .mail {
+    margin-top: 15px;
+    width: 100px;
+    text-align: center;
+    background: rgb(223, 223, 223); /* Green background color */
+    color: rgb(0, 0, 0); /* Black text color */
+    padding: 10px 20px; /* Padding for the button */
+    border: 2px solid transparent; /* Set a transparent border */
+    border-image: linear-gradient(90deg, #29BBC4 0%, #23195D 100%) 1; /* Apply the gradient as the border image */
+    border-image-slice: 1; /* Make the entire border the gradient */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+
+
+#home .mail:hover {
+    transform: scale(1.05);
+    background: #ffffff; /* Darker green on hover */
+    color: black;
+    border: 1px solid black;
+    box-shadow: 0 0 10px rgba(51, 51, 51, 0.8);
+
+}
+
+/* About, Resume, Works, Gallery, and Contact Section styles */
+#resume, #works, #gallery, #contact {
+    text-align: center;
+}
+
+/* About Me Section Styles */
+#about {
+    background-color: rgb(223, 223, 223);
+    background-color: ;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.about-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#about img {
+    height: 300px;
+}
+
+#about .personal {
+    width: 400px;
+    text-align: left;
+    padding: 20px;
+}
+#about .description {
+    width: 400px;
+    text-align: left;
+    padding: 20px;
+}
+#about li {
+    text-align: left;
+    list-style: none;
+    margin: 10px 0;
+}
+
+#about li strong {
+    font-weight: bold;
+}
+
+
+.achievements, .education, .skills {
+    padding: 20px;
+}
+#resume .education {
+    margin: auto;
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#resume .education img {
+    width: 200px;
+    padding-bottom: 10px;
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+#resume .education img:hover {
+    transform: scale(1.1);
+}
+
+#resume .education h3 {
+    transform: rotate(-89.772deg);
+    padding-top: 100px;
+}
+#resume .education p {
+    color: rgba(0, 0, 0, 0.70);
+}
+
+#resume .achievements {
+    margin: auto;
+    width: 72%;
+}
+#resume .achievements .content {
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.achievements [class^="container"] {
+    margin:10px;
+    width: 400px;
+    background-color: rgb(254, 254, 254);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.7s, color 0.7s, background-color 0.7s;
+}
+
+.achievements [class^="container"]:hover {
+    color: white;
+    background-color: rgb(49, 49, 49);
+    transform: scale(1.05);
+}
+
+#resume .achievements .content img {
+    width: 70px;
+    padding-bottom: 12px;
+}
+
+#resume .achievements .content p {
+    text-align: left;
+    font-size: small;
+    padding-bottom: 3px;
+}
+
+#resume .achievements h3 {
+    transform: rotate(-89.772deg);
+    padding-top: 100px;
+}
+
+#resume .skills {
+    margin: auto;
+    width: 72%;
+}
+
+#resume .skills .content {
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.skills [class^="container"] {
+    margin: 10px;
+    width: 400px;
+    background-color: rgb(254, 254, 254);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.7s, color 0.7s, background-color 0.7s;
+}
+
+.skills [class^="container"]:hover {
+    color: white;
+    background-color: rgb(49, 49, 49);
+    transform: scale(1.05);
+}
+
+#resume .skills .content img {
+    width: 70px;
+    padding-bottom: 12px;
+}
+
+#resume .skills .content p {
+    /* text-align: left; */
+    font-size: small;
+    padding-bottom: 3px;
+}
+
+#resume .skills h3 {
+    transform: rotate(-89.772deg);
+    padding-top: 100px;
+}
+
+#works .projects {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#works .projects img {
+    width: 130px;
+}
+
+#works .calculator, 
+#works .bmi, 
+#works .task,
+#works .university,
+#works .personal {
+    padding: 30px;
+    margin: 10px;
+    background-color: rgb(254, 254, 254);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.7s;
+    width: 200px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.7s, color 0.7s, background-color 0.7s;
+}
+
+#works .calculator:hover, 
+#works .bmi:hover, 
+#works .task:hover,
+#works .university:hover,
+#works .personal:hover {
+    transform: scale(1.05);
+    color: white;
+    background-color: rgb(49, 49, 49);
+}
+
+#works button{
+    margin-top: 30px;
+    width: 150px;
+    text-align: center;
+    background: linear-gradient(90deg, #29BBC4 0%, #23195D 100%); /* Green background color */
+    color: white;       /* White text color */
+    padding: 10px 20px; /* Padding for the button */
+    border: none;      /* Remove the button border */
+    cursor: pointer;   /* Change cursor to pointer on hover */
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+#works button:hover {
+    transform: scale(1.05);
+    background: #ffffff; /* Darker green on hover */
+    color: black;
+    box-shadow: 0 0 10px rgba(51, 51, 51, 0.8);
+
+}
+
+#works #o {
+    margin-top: 40px;
+}
+
+#works p {
+    font-size: small;
+    padding-bottom: 3px;
+}
+
+/* Logo image styles */
+
+#gallery img{
+    width: 240px;
+    padding: 15px;
+    transition: transform 1s, box-shadow 1s;
+}
+
+#gallery img:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(48, 48, 48, 0.8);
+}
+
+#gallery .images {
+    width: 900px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+#contact .contacts{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.contacts img {
+    padding: 10px;
+    width: 25px;
+    border-radius: 50%;
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.contacts img:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 10px rgba(188, 204, 46, 0.8);
+}
+
+.contact-form {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 65%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    background: #383838; /* Green background color */
+    color: white;       /* White text color */
+    padding: 10px 20px; /* Padding for the button */
+    border: none;      /* Remove the button border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;   /* Change cursor to pointer on hover */
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.contact-form button:hover {
+    background: #ffffff; /* Darker green on hover */
+    color: black;
+    border: 1px solid black;
+    box-shadow: 0 0 10px rgba(51, 51, 51, 0.8);
+}
+
+hr {
+    position: relative;
+    border: none; /* Remove the default hr border */
+    width: 120px;
+    height: 2px; /* Set the desired height for the border */
+    margin: 20px auto; /* Adjust margin as needed */
+
+    /* Create the left-to-right gradient border using a pseudo-element */
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, #29BBC4 0%, #23195D 100%);
+    }
+}
