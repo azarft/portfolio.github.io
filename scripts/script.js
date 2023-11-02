@@ -24,3 +24,12 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
     // Optionally, you can reset the form after submission
     document.getElementById("contact-form").reset();
 });
+
+
+function callMe() {
+    window.location.href = "tel:+996999697069";
+  }
+
+function emailMe() {
+    window.location.href = "mailto:argoazanov@gmail.com";
+}
